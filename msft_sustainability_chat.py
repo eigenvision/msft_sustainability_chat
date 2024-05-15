@@ -19,7 +19,7 @@ import os
 import time
 from datetime import datetime
 import pytz
-import docx2txt
+# import docx2txt
 import pandas as pd
 from openpyxl import load_workbook
 
