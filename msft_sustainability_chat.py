@@ -121,7 +121,6 @@ depth_prompt = """
         sources, while still scrupulous respecting user instructions regarding the length of your response.
         YOU NEVER GIVE SHORT ANSWERS UNLESS SPECIFICALLY INSTRUCTED TO DO SO. In most cases a one
         paragraph answer is TOO SHORT.
-        MDDR means the Microsoft Digital Defense Report.
         """
 
 talking_points_prompt = """
@@ -243,7 +242,6 @@ st.info("""This chatbot lets you converse with the 2024 Microsoft Environmental 
     sustainability work suitable for use in customer and stakeholder engagements. Nevertheless, because AI
     can sometimes produce unexpected or wrong answers, you should always review carefully before sharing. 
     If you're not satisfied with the AI's first attempt, try revising your prompt or asking follow up questions.""")
-# st.write("[Download the Microsoft Digital Defense Report](https://www.microsoft.com/en-us/security/security-insider/microsoft-digital-defense-report-2023)")
 
 # Custom CSS to center text
 st.markdown("""
@@ -255,7 +253,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Text with hyperlink centered
-st.markdown('<p class="centered-text">Download the <a href="https://blogs.microsoft.com/blog/2024/04/02/sustainable-by-design-advancing-the-sustainability-of-ai/" target="_blank">2024 Microsoft Environmental Sustainability Report (temp)</a></p>', unsafe_allow_html=True)
+st.markdown('<p class="centered-text">Download the <a href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW1lhhu" target="_blank">2024 Microsoft Environmental Sustainability Report</a></p>', unsafe_allow_html=True)
 
 # SELECT SYSTEM PROMPT AND MODEL
 # Define the possible choices linking to the variables
@@ -319,7 +317,7 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
     ]
 
 
-# LOAD MDDR INTO LLAMAINDEX, CREATE INDEX (AND RELOAD IF IT ALREADY EXISTS)
+# LOAD DOCS INTO LLAMAINDEX, CREATE INDEX (AND RELOAD IF IT ALREADY EXISTS)
 @st.cache_resource(show_spinner=False)
 def load_data():
   with st.spinner(text="Loading the reports. This will take a few minutes."):
@@ -352,7 +350,7 @@ def run_chats(query):
     
     search_time = 0.0 
 
-    similarity_top_k = 12
+    similarity_top_k = 15
    
     start_time_search = time.time() # time vector search
     chat_engine = index.as_chat_engine(chat_mode="condense_question",
