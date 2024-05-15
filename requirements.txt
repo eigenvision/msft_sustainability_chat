@@ -3,4 +3,3 @@ openai
 llama-index
 pytz
 openpyxl
-import docx2txt
