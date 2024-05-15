@@ -241,7 +241,10 @@ st.info("""This chatbot lets you converse with the 2024 Microsoft Environmental 
     Using GPT-4, the chatbot is designed to produce substantive and accurate answers about Microsoft's
     sustainability work suitable for use in customer and stakeholder engagements. Nevertheless, because AI
     can sometimes produce unexpected or wrong answers, you should always review carefully before sharing. 
-    If you're not satisfied with the AI's first attempt, try revising your prompt or asking follow up questions.""")
+    If you're not satisfied with the AI's first attempt, try revising your prompt or asking follow up questions.
+      \n\nIf you're asking for a complex response like a set of talking points or presentation slides, try to 
+    give the bot an outline of the ideas or topics you want it to cover. You should also tell it how many
+    talking points or slides you expect.""")
 
 # Custom CSS to center text
 st.markdown("""
